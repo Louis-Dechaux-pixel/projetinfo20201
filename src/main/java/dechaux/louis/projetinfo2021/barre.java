@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package dechaux.louis.projetinfo2021;
-
+import dechaux.louis.projetinfo2021.Lire;
 /**
  *
  * @author ldechaux01
