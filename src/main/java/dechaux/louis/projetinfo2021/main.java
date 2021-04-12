@@ -10,6 +10,10 @@ package dechaux.louis.projetinfo2021;
  * @author ldechaux01
  */
 public class main {
+public static void main() {
+ Barre res;
+ res = new Barre();
+ 
+ 
     
-    
-}
+}}
