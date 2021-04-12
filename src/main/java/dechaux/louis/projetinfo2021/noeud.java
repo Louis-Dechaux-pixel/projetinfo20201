@@ -9,22 +9,22 @@ package dechaux.louis.projetinfo2021;
  *
  * @author ldechaux01
  */
-public class noeud {
-   protected force Force;
+public class Noeud {
+   protected Force force;
    
-public class noeud_simple extends noeud{
+public class noeud_simple extends Noeud{
 }
-public class appui extends noeud{
-    protected terrain attache;
+public class Appui extends Noeud{
+    protected Terrain attache;
     
-public class appui_simple extends appui{
+public class Appui_simple extends Appui{
 
 }
-public class appui_encastre extends appui{
+public class Appui_encastre extends Appui{
 }
-public class appui_double extends appui{
+public class Appui_double extends Appui{
 }
-public class appui_rouleau extends appui{
+public class Appui_rouleau extends Appui{
 }
 }
 

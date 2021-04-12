@@ -8,14 +8,14 @@ package dechaux.louis.projetinfo2021;
  *
  * @author ldechaux01
  */
-public class barre {
+public class Barre {
     private int id;
-    private noeud debut;
-    private noeud fin;
-    protected type typebarre;
+    private Noeud debut;
+    private Noeud fin;
+    protected Type typebarre;
     
     
-    public class type {
+    public class Type {
     protected int id;
     protected double prix;
     protected double longmax;
@@ -23,7 +23,7 @@ public class barre {
     protected double resmax;
     protected double resmin;    
     
-    public type(){
+    public Type(){
         this.id= 5;
         System.out.println("definissez la long max");
         this.longmax = Lire.d();
