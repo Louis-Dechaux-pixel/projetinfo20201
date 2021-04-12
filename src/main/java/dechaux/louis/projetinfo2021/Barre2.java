@@ -8,10 +8,10 @@ package dechaux.louis.projetinfo2021;
  *
  * @author ldechaux01
  */
-public class Barre {
+public class Barre2 {
     private int id;
-    private Noeud debut;
-    private Noeud fin;
+    private Noeud2 debut;
+    private Noeud2 fin;
     protected Type typebarre;
     
     

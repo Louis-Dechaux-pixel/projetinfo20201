@@ -9,7 +9,7 @@ package dechaux.louis.projetinfo2021;
  *
  * @author ldechaux01
  */
-public class Terrain {
+public class Terrain2 {
     private double localisationx;
     private double localisationy;
 }
