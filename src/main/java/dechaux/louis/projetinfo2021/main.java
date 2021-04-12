@@ -10,9 +10,10 @@ package dechaux.louis.projetinfo2021;
  * @author ldechaux01
  */
 public class main {
-public static void main() {
+public static void main(String args[]) {
  Barre res;
  res = new Barre();
+ System.out.println("eh gilou passe moi le sauciflard");
  
  
     
