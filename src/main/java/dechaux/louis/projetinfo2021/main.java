@@ -13,6 +13,7 @@ public class main {
 public static void main(String args[]) {
  Barre res;
  res = new Barre();
+ res.toString();
  System.out.println("eh gilou passe moi le sauciflard");
  
  
