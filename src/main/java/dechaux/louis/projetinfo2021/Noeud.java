@@ -9,13 +9,13 @@ package dechaux.louis.projetinfo2021;
  *
  * @author ldechaux01
  */
-public class Noeud2 {
-   protected Force2 force;
+public class Noeud {
+   protected Force force;
    
-public class noeud_simple extends Noeud2{
+public class noeud_simple extends Noeud{
     }
-public class Appui extends Noeud2{
-    protected Terrain2 attache;
+public class Appui extends Noeud{
+    protected Terrain attache;
     
 public class Appui_simple extends Appui{
 
