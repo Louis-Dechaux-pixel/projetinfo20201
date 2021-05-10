@@ -14,6 +14,12 @@ public class Barre {
     private Noeud fin;
     protected Type typebarre;
     
+    public Barre(){
+    this.id= 5;
+    this.debut = null;
+    this.fin = null;
+    this.typebarre = new Type();    
+    }
     
     public class Type {
     protected int id;
@@ -27,21 +33,21 @@ public class Barre {
         this.id= 5;
         System.out.println("definissez la long max");
         this.longmax = Lire.d();
-        System.out.println("definissez la long max");
+        System.out.println("definissez la long min");
         this.longmin = Lire.d();
-        System.out.println("definissez la long max");
+        System.out.println("definissez la res max");
         this.resmax = Lire.d();
-        System.out.println("definissez la long max");
+        System.out.println("definissez la res min");
         this.resmin = Lire.d();
-        System.out.println("definissez la long max");
+        System.out.println("definissez le prix");
         this.prix = Lire.d();
         
     }
     public String toString(){
-       return "identifiant: "+id+"\n longeur max: "+longmax+"\n longmin: "+longmin+"\n resmin: "+resmin+"\n resmax: "+resmax+"\n prix: "+prix ;}
+       return "identifiant: "+this.id+"\n longeur max: "+this.longmax+"\n longmin: "+this.longmin+"\n resmin: "+this.resmin+"\n resmax: "+this.resmax+"\n prix: "+this.prix ;}
     }
     public String toString(){
-    return "identifiant"+id+"\n debut noeud :"+debut+"\n fin noeud"+fin+"\n type"+this.typebarre.toString();
+    return "identifiant"+this.id+"\n debut noeud :"+this.debut+"\n fin noeud"+this.fin+"\n type"+this.typebarre.toString();
     }
     
     
