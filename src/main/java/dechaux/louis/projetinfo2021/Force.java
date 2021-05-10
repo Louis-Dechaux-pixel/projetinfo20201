@@ -25,7 +25,10 @@ public Force appui(){
     this.fy=0;
     return this;
 }
-
+public Force(){
+    this.fx=0.0;
+    this.fy=0.0;   
+}
 public String toString(){
     return "force de x : "+this.fx+"\n force de y :"+this.fy;}
 

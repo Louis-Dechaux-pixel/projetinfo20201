@@ -12,4 +12,7 @@ package dechaux.louis.projetinfo2021;
 public class Terrain {
     private double localisationx;
     private double localisationy;
-}
+
+public String toString(){
+    return "localisation x :"+this.localisationx+"\n localisation y : "+this.localisationy;
+    }}

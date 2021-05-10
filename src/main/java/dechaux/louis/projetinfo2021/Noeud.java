@@ -18,6 +18,14 @@ public class Noeud {
 
         private double px;
         private double py;
+        
+        public noeud_simple(){
+         this.px=0;
+         this.py=0;
+         this.id=5;
+         this.force= new Force();
+            
+        }
     public String toString(){
     return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py;
     }}
