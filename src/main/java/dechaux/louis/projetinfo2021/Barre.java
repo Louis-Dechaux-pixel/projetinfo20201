@@ -37,22 +37,11 @@ public class Barre {
         this.prix = Lire.d();
         
     }
-    public void toStrings(){
-    System.out.println(this.id);
-    System.out.println(this.prix);
-    System.out.println(this.longmin);
-    System.out.println(this.longmax);
-    System.out.println(this.resmax);
-    System.out.println(this.resmin);}
+    public String toString(){
+       return "identifiant: "+id+"\n longeur max: "+longmax+"\n longmin: "+longmin+"\n resmin: "+resmin+"\n resmax: "+resmax+"\n prix: "+prix ;}
     }
-    public void toStrings(){
-    System.out.println(this.id);
-    System.out.println(this.debut);
-    System.out.println(this.fin);
-    System.out.println(this.typebarre);
-    
-    
-    
+    public String toString(){
+    return "identifiant"+id+"\n debut noeud :"+debut+"\n fin noeud"+fin+"\n type"+this.typebarre.toString();
     }
     
     
