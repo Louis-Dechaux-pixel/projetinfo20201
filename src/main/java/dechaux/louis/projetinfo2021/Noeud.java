@@ -18,15 +18,19 @@ public class Noeud {
 
         private double px;
         private double py;
+    public String toString(){
+    return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py;
     }
 
     public class Appui extends Noeud {
 
+        protected double px;
+        protected double py;
         protected Terrain attache;
-        protected Terrain TT;
 
         public class Appui_simple extends Appui {
-
+public String toString(){
+    return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
         }
 
         public class Appui_encastre extends Appui {
