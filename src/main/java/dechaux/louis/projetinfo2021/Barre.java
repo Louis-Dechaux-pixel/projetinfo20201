@@ -47,7 +47,7 @@ public class Barre {
        return "identifiant: "+this.id+"\n longeur max: "+this.longmax+"\n longmin: "+this.longmin+"\n resmin: "+this.resmin+"\n resmax: "+this.resmax+"\n prix: "+this.prix ;}
     }
     public String toString(){
-    return "identifiant"+this.id+"\n debut noeud :"+this.debut+"\n fin noeud"+this.fin+"\n type"+this.typebarre.toString();
+    return "identifiant"+this.id+"\n debut noeud :"+this.debut+"\n fin noeud: "+this.fin+"\n type:  "+this.typebarre.toString();
     }
     
     
