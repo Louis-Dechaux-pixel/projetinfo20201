@@ -20,7 +20,7 @@ public class Noeud {
         private double py;
     public String toString(){
     return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py;
-    }
+    }}
 
     public class Appui extends Noeud {
 
@@ -29,17 +29,26 @@ public class Noeud {
         protected Terrain attache;
 
         public class Appui_simple extends Appui {
-public String toString(){
-    return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
-        }
+        public String toString(){
+        return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
+        }}
 
         public class Appui_encastre extends Appui {
+            public String toString(){
+        return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
+        }
         }
 
         public class Appui_double extends Appui {
+            public String toString(){
+        return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
+        }
         }
 
         public class Appui_rouleau extends Appui {
+            public String toString(){
+        return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
+        }
         }
     }
 }
