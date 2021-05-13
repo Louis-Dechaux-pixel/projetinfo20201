@@ -13,6 +13,15 @@ public class Force {
     protected double fx;
     protected double fy;
 
+    public double getFx() {
+        return fx;}
+    public void setFx(double fx) {
+        this.fx = fx;}
+    public double getFy() {
+        return fy;}
+    public void setFy(double fy) {
+        this.fy = fy;}
+    
 public Force ajout(Force force1){
 Force res;
 res = new Force();
