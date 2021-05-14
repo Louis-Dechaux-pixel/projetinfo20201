@@ -5,10 +5,30 @@
  */
 package dechaux.louis.projetinfo2021.gui;
 
+import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 /**
  *
  * @author ldenner01
  */
 public class Main {
+    
+    public class Main extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        Scene sc = new Scene(new BoiteACoucou());
+        stage.setScene(sc);
+          stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+}
     
 }
