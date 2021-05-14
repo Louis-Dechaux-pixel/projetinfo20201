@@ -13,6 +13,17 @@ public class Noeud {
 
     protected Force force;
     protected int id;
+    protected double px;
+    protected double py;
+  
+    public double getPx() {
+            return px;}
+        public void setPx(double px) {
+            this.px = px;}
+        public double getPy() {
+            return py;}
+        public void setPy(double py) {
+            this.py = py;}
 
     public Force getForce() {
         return force;}
@@ -25,17 +36,6 @@ public class Noeud {
     
     public class noeud_simple extends Noeud {
 
-        private double px;
-        private double py;
-
-        public double getPx() {
-            return px;}
-        public void setPx(double px) {
-            this.px = px;}
-        public double getPy() {
-            return py;}
-        public void setPy(double py) {
-            this.py = py;}
         public noeud_simple(){
          this.px=0;
          this.py=0;
@@ -48,19 +48,7 @@ public class Noeud {
     }}
 
     public class Appui extends Noeud {
-
-        protected double px;
-        protected double py;
         protected Terrain attache;
-
-        public double getPx() {
-            return px;}
-        public void setPx(double px) {
-            this.px = px;}
-        public double getPy() {
-            return py;}
-        public void setPy(double py) {
-            this.py = py;}
         public Terrain getAttache() {
             return attache;}
         public void setAttache(Terrain attache) {
