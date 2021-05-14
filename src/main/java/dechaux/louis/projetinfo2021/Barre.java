@@ -126,8 +126,7 @@ public class Barre {
         } else if (up > 1) {
             return this.fin.distancePoint(p);
         } else {
-            Noeud p4 = new Noeud(x1 + up * (x2 - x1),
-                    y1 + up * (y2 - y1));
+            Noeud p4 = new noeud_simple(x1,y1);
             return p4.distancePoint(p);
         }
     }
