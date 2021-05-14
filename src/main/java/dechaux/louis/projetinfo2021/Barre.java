@@ -11,9 +11,9 @@ package dechaux.louis.projetinfo2021;
  */
 public class Barre {
 
-    private int id;
-    private Noeud debut;
-    private Noeud fin;
+    protected int id;
+    protected Noeud debut;
+    protected Noeud fin;
     protected Type typebarre;
 
     public int getId() {
@@ -111,8 +111,8 @@ public class Barre {
     public String toString() {
         return "identifiant" + this.id + "\n debut noeud :" + this.debut + "\n fin noeud: " + this.fin + "\n type:  " + this.typebarre.toString();
     }
-    
-    public double distancePoint(Point p) {
+
+    public double distancePoint(Noeud p) {
         double x1 = this.debut.getPx();
         double y1 = this.debut.getPy();
         double x2 = this.fin.getPx();
@@ -126,12 +126,10 @@ public class Barre {
         } else if (up > 1) {
             return this.fin.distancePoint(p);
         } else {
-            Point p4 = new Point(x1 + up * (x2 - x1),
+            Noeud p4 = new Noeud(x1 + up * (x2 - x1),
                     y1 + up * (y2 - y1));
             return p4.distancePoint(p);
         }
     }
 
 }
-
-
