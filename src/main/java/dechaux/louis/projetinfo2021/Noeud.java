@@ -15,6 +15,7 @@ public class Noeud {
     protected int id;
     protected double px;
     protected double py;
+    
   
     public double getPx() {
             return px;}
@@ -32,49 +33,4 @@ public class Noeud {
     public int getId() {
         return id;}
     public void setId(int id) {
-        this.id = id;}
-    
-    public class noeud_simple extends Noeud {
-
-        public noeud_simple(double px, double py){
-         this.px=px;
-         this.py=py;
-         this.id=5;
-         this.force= new Force();
-            
-        }
-    public String toString(){
-    return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py;
-    }}
-
-    public class Appui extends Noeud {
-        protected Terrain attache;
-        public Terrain getAttache() {
-            return attache;}
-        public void setAttache(Terrain attache) {
-            this.attache = attache;}
-        
-        public class Appui_simple extends Appui {
-        public String toString(){
-        return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
-        }}
-
-        public class Appui_encastre extends Appui {
-            public String toString(){
-        return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
-        }
-        }
-
-        public class Appui_double extends Appui {
-            public String toString(){
-        return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
-        }
-        }
-
-        public class Appui_rouleau extends Appui {
-            public String toString(){
-        return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
-        }
-        }
-    }
-}
+        this.id = id;}}
