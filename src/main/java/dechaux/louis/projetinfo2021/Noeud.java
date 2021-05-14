@@ -36,9 +36,9 @@ public class Noeud {
     
     public class noeud_simple extends Noeud {
 
-        public noeud_simple(){
-         this.px=0;
-         this.py=0;
+        public noeud_simple(double px, double py){
+         this.px=px;
+         this.py=py;
          this.id=5;
          this.force= new Force();
             
