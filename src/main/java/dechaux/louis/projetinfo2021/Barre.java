@@ -5,6 +5,8 @@
  */
 package dechaux.louis.projetinfo2021;
 
+import dechaux.louis.projetinfo2021.Noeud.noeud_simple;
+
 /**
  *
  * @author ldechaux01
@@ -119,14 +121,8 @@ public class Barre {
         double y2 = this.fin.getPy();
         double x3 = p.getPx();
         double y3 = p.getPy();
-        double up = ((x3 - x1) * (x2 - x1) + (y3 - y1) * (y2 - y1))
-                / (Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-        if (up < 0) {
-            return this.debut.distancePoint(p);
-        } else if (up > 1) {
-            return this.fin.distancePoint(p);
-        } else {
-            Noeud p4 = new noeud_simple(x1,y1);
+            Noeud.noeud_simple p4;
+            p4 = new noeud_simple(x1,y1);
             return p4.distancePoint(p);
         }
     }
