@@ -13,6 +13,23 @@ public class Barre {
     private Noeud debut;
     private Noeud fin;
     protected Type typebarre;
+
+    public int getId() {
+        return id;}
+    public void setId(int id) {
+        this.id = id;}
+    public Noeud getDebut() {
+        return debut;}
+    public void setDebut(Noeud debut) {
+        this.debut = debut;}
+    public Noeud getFin() {
+        return fin;}
+    public void setFin(Noeud fin) {
+        this.fin = fin;}
+    public Type getTypebarre() {
+        return typebarre;}
+    public void setTypebarre(Type typebarre) {
+        this.typebarre = typebarre;}
     
     public Barre(){
     this.id= 5;
@@ -28,7 +45,20 @@ public class Barre {
     protected double longmin;
     protected double resmax;
     protected double resmin;    
-    
+
+        public int getId() {
+            return id;}
+        public double getPrix() {
+            return prix;}
+        public double getLongmax() {
+            return longmax;}
+        public double getLongmin() {
+            return longmin;}
+        public double getResmax() {
+            return resmax;}
+        public double getResmin() {
+            return resmin;}
+        
     public Type(){
         this.id= 5;
         System.out.println("definissez la long max");

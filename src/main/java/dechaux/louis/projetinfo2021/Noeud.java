@@ -14,11 +14,28 @@ public class Noeud {
     protected Force force;
     protected int id;
 
+    public Force getForce() {
+        return force;}
+    public void setForce(Force force) {
+        this.force = force;}
+    public int getId() {
+        return id;}
+    public void setId(int id) {
+        this.id = id;}
+    
     public class noeud_simple extends Noeud {
 
         private double px;
         private double py;
-        
+
+        public double getPx() {
+            return px;}
+        public void setPx(double px) {
+            this.px = px;}
+        public double getPy() {
+            return py;}
+        public void setPy(double py) {
+            this.py = py;}
         public noeud_simple(){
          this.px=0;
          this.py=0;
@@ -36,6 +53,19 @@ public class Noeud {
         protected double py;
         protected Terrain attache;
 
+        public double getPx() {
+            return px;}
+        public void setPx(double px) {
+            this.px = px;}
+        public double getPy() {
+            return py;}
+        public void setPy(double py) {
+            this.py = py;}
+        public Terrain getAttache() {
+            return attache;}
+        public void setAttache(Terrain attache) {
+            this.attache = attache;}
+        
         public class Appui_simple extends Appui {
         public String toString(){
         return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
