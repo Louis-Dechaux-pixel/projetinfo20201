@@ -15,6 +15,14 @@ public class Noeud {
     protected int id;
     protected double px;
     protected double py;
+
+    public Noeud(double px, double py) {
+        this.px = px;
+        this.py = py;
+        this.id=5;
+        this.force= new Force();
+       }
+    
   
     public double getPx() {
             return px;}
