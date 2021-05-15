@@ -52,7 +52,7 @@
                     <noHeaderFiles>true</noHeaderFiles>
                     <stripDebug>true</stripDebug>
                     <noManPages>true</noManPages>
-                    <mainClass>dechaux.louis.projetinfo2021.Main</mainClass>
+                    <mainClass>dechaux.louis.projetinfo2021.gui.Main</mainClass>
                     <launcher>TutoVideoDessin</launcher>
                     <jlinkImageName>TutoVideoDessin</jlinkImageName>
                     <!-- pour zipper le dossier image

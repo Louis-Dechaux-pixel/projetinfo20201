@@ -9,26 +9,24 @@ import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 /**
  *
  * @author ldenner01
  */
-public class Main {
-    
-    public class Main extends Application {
+public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        Scene sc = new Scene(new BoiteACoucou());
+        Scene sc = new Scene(new TreilliPane());
         stage.setScene(sc);
-          stage.show();
+        stage.show();
     }
 
     public static void main(String[] args) {
+
         launch();
     }
 
-}
-    
 }
