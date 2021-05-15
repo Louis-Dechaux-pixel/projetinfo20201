@@ -22,6 +22,7 @@ public class Treilli {
     protected List<Barre> barrecontenue;
     protected List<Noeud> noeudcontenue;
     protected List<Terrain> terraincontenue;
+    protected List<TypeBarre> typebarrecontenue;
     protected List<Force> forcecontenue;
     
 }
