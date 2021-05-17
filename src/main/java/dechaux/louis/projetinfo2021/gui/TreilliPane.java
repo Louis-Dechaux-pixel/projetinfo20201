@@ -43,7 +43,7 @@ public class TreilliPane extends BorderPane {
         VBox vbDroit = new VBox(this.bGrouper, this.bCouleur);
         this.setRight(vbDroit);
 
-        this.cDessin = new DessinCanvas(300, 300);
+        this.cDessin = new DessinCanvas();
         this.setCenter(this.cDessin);
 
     }

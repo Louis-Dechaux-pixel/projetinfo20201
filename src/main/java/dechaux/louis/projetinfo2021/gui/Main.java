@@ -19,7 +19,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        Scene sc = new Scene(new TreilliPane());
+        Scene sc = new Scene(new TreilliPane(),1000,1000);
         stage.setScene(sc);
         stage.show();
     }
