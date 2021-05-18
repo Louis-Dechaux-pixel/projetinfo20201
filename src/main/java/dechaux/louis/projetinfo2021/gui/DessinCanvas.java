@@ -21,6 +21,15 @@ public class DessinCanvas extends Pane {
     public DessinCanvas() {
 
         this.realCanvas = new Canvas(this.getWidth(), this.getHeight());
+        this.getChildren().add(this.realCanvas);
+        this.realCanvas.heightProperty().bind(this.heightProperty());
+        this.realCanvas.heightProperty().addListener((o) -> {
+            this.redrawAll();
+        });
+        this.realCanvas.widthProperty().bind(this.widthProperty());
+        this.realCanvas.widthProperty().addListener((o) -> {
+            this.redrawAll();
+        });
         this.redrawAll();
     }
 
