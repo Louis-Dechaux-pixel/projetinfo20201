@@ -19,7 +19,6 @@ public class DessinCanvas extends Pane {
     private Canvas realCanvas;
 
     public DessinCanvas() {
-
         this.realCanvas = new Canvas(this.getWidth(), this.getHeight());
         this.getChildren().add(this.realCanvas);
         this.realCanvas.heightProperty().bind(this.heightProperty());
@@ -34,7 +33,6 @@ public class DessinCanvas extends Pane {
     }
 
     public void redrawAll() {
-
         GraphicsContext context = this.realCanvas.getGraphicsContext2D();
         context.fillRect(0, 0, this.getWidth(), this.getHeight());
         context.setFill(Color.WHITE);
