@@ -5,6 +5,7 @@
  */
 package dechaux.louis.projetinfo2021;
 
+import dechaux.louis.projetinfo2021.Barre.Type;
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
@@ -20,6 +21,7 @@ import dechaux.louis.projetinfo2021.Lire;
 public class Treilli {
     
     protected List<Barre> barrecontenue;
+    protected List<Type> typebarrecontenue;
     protected List<Noeud> noeudcontenue;
     protected List<Terrain> terraincontenue;
     protected List<Force> forcecontenue;
