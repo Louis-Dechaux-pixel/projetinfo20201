@@ -5,12 +5,14 @@
  */
 package dechaux.louis.projetinfo2021;
 
+import javafx.scene.canvas.GraphicsContext;
+
 
 /**
  *
  * @author ldechaux01
  */
-public class Barre {
+public class Barre extends TriangleTerrain{
 
     protected int id;
     protected Noeud debut;
@@ -54,6 +56,11 @@ public class Barre {
         this.debut = null;
         this.fin = null;
         this.typebarre = new Type();
+    }
+
+    @Override
+    public void dessine(GraphicsContext context) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public class Type {

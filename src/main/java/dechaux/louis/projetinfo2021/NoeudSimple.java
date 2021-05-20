@@ -5,6 +5,9 @@
  */
 package dechaux.louis.projetinfo2021;
 
+import javafx.scene.paint.Color;
+
+
 /**
  *
  * @author ldechaux01
@@ -15,7 +18,7 @@ public class NoeudSimple extends Noeud {
          this.px=px;
          this.py=py;
          this.id=5;
-         this.force= new Force();
+         this.force= new Force();         
             
         }
     public String toString(){
