@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dechaux.louis.projetinfo2021.gui;
+package dechaux.louis.projetinfo2021;
 
 /**
  *
- * @author ldenner01
+ * @author ivane
  */
-public class Controleur {
-    
-    protected TreilliPane vue;
-   
-    public Controleur(TreilliPane vue){
-        this.vue = vue;
-    }
+public class TriangleTerrain {
     
 }

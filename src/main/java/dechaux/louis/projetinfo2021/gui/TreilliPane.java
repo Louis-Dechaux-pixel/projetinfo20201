@@ -5,12 +5,9 @@
  */
 package dechaux.louis.projetinfo2021.gui;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.canvas.Canvas;
+import dechaux.louis.projetinfo2021.Terrain;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
@@ -19,6 +16,9 @@ import javafx.scene.layout.VBox;
  * @author ldenner01
  */
 public class TreilliPane extends BorderPane {
+    
+    private Terrain terrain;
+    protected Controleur controleur;
 
     protected RadioButton rbSelect;
     protected RadioButton rbNoeuds;
@@ -28,8 +28,13 @@ public class TreilliPane extends BorderPane {
     protected Button bCouleur;
 
     protected DessinCanvas cDessin;
-
-    public TreilliPane() {
+    
+    public TreilliPane(){
+        this(new Terrain());
+    }
+    public TreilliPane(Terrain terrain) {
+        this.terrain = terrain;
+        this.controleur = new Controleur(this);
         this.rbSelect = new RadioButton("Select");
         this.rbNoeuds = new RadioButton("Noeuds");
         this.rbBarres = new RadioButton("Barres");
@@ -46,9 +51,23 @@ public class TreilliPane extends BorderPane {
         VBox vbDroit = new VBox(this.bGrouper, this.bCouleur);
         this.setRight(vbDroit);
 
-        this.cDessin = new DessinCanvas();
+        this.cDessin = new DessinCanvas(this);
         this.setCenter(this.cDessin);
 
+    }
+
+    /**
+     * @return the controleur
+     */
+    public Controleur getControleur() {
+        return controleur;
+    }
+
+    /**
+     * @return the terrain
+     */
+    public Terrain getTerrain() {
+        return terrain;
     }
 
 }

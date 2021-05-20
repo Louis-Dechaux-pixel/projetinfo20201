@@ -5,20 +5,23 @@
  */
 package dechaux.louis.projetinfo2021.gui;
 
+import dechaux.louis.projetinfo2021.Terrain;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 
 /**
  *
  * @author ldenner01
  */
 public class DessinCanvas extends Pane {
+    
+    protected TreilliPane main;
 
     private Canvas realCanvas;
 
-    public DessinCanvas() {
+    public DessinCanvas(TreilliPane main) {
+        this.main = main;
         this.realCanvas = new Canvas(this.getWidth(), this.getHeight());
         this.getChildren().add(this.realCanvas);
         this.realCanvas.heightProperty().bind(this.heightProperty());
@@ -34,9 +37,9 @@ public class DessinCanvas extends Pane {
 
     public void redrawAll() {
         GraphicsContext context = this.realCanvas.getGraphicsContext2D();
-        context.fillRect(0, 0, this.getWidth(), this.getHeight());
-        context.setFill(Color.WHITE);
-
+        Terrain terrain = this.main.getTerrain();
+        
+    
     }
 
 }

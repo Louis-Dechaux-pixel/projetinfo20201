@@ -20,4 +20,9 @@ public class NoeudSimple extends Noeud {
         }
     public String toString(){
     return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py;
-    }}
+    }
+
+    double distancePoint(Noeud p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}

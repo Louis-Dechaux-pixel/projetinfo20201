@@ -123,6 +123,7 @@ public class Barre {
             NoeudSimple p4;
             p4 = new NoeudSimple(x1,y1);
             return p4.distancePoint(p);
+            
         }
     }
 
