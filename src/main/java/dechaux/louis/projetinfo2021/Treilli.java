@@ -25,5 +25,45 @@ public class Treilli {
     protected List<Noeud> noeudcontenue;
     protected List<Terrain> terraincontenue;
     protected List<Force> forcecontenue;
+
+    public List<Barre> getBarrecontenue() {
+        return barrecontenue;
+    }
+
+    public void setBarrecontenue(List<Barre> barrecontenue) {
+        this.barrecontenue = barrecontenue;
+    }
+
+    public List<Type> getTypebarrecontenue() {
+        return typebarrecontenue;
+    }
+
+    public void setTypebarrecontenue(List<Type> typebarrecontenue) {
+        this.typebarrecontenue = typebarrecontenue;
+    }
+
+    public List<Noeud> getNoeudcontenue() {
+        return noeudcontenue;
+    }
+
+    public void setNoeudcontenue(List<Noeud> noeudcontenue) {
+        this.noeudcontenue = noeudcontenue;
+    }
+
+    public List<Terrain> getTerraincontenue() {
+        return terraincontenue;
+    }
+
+    public void setTerraincontenue(List<Terrain> terraincontenue) {
+        this.terraincontenue = terraincontenue;
+    }
+
+    public List<Force> getForcecontenue() {
+        return forcecontenue;
+    }
+
+    public void setForcecontenue(List<Force> forcecontenue) {
+        this.forcecontenue = forcecontenue;
+    }
     
 }

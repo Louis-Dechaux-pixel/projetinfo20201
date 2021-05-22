@@ -10,6 +10,7 @@ package dechaux.louis.projetinfo2021;
  * @author ldechaux01
  */
 public class Terrain {
+    protected int id;
     protected double p1localisationx;
     protected double p1localisationy;
     protected double p2localisationx;
@@ -17,9 +18,9 @@ public class Terrain {
     protected double p3localisationx;
     protected double p3localisationy;
 
-    public Terrain() {
+    public Terrain(int a) {
         System.out.println("donner les coordonées des 3 point ( x puis y) ");
-        
+        this.id=a;
         this.p1localisationx = Lire.d();
         this.p1localisationy = Lire.d();
         this.p2localisationx = Lire.d();

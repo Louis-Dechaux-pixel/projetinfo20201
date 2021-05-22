@@ -5,7 +5,8 @@
  */
 package dechaux.louis.projetinfo2021.gui;
 
-import dechaux.louis.projetinfo2021.Terrain;
+import dechaux.louis.projetinfo2021.*;
+import java.util.List;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.BorderPane;
@@ -17,7 +18,7 @@ import javafx.scene.layout.VBox;
  */
 public class TreilliPane extends BorderPane {
     
-    private Terrain terrain;
+    private Treilli Treilli;
     protected Controleur controleur;
 
     protected RadioButton rbSelect;
@@ -30,10 +31,10 @@ public class TreilliPane extends BorderPane {
     protected DessinCanvas cDessin;
     
     public TreilliPane(){
-        this(new Terrain());
+        this(new Treilli());
     }
-    public TreilliPane(Terrain terrain) {
-        this.terrain = terrain;
+    public TreilliPane(Treilli treilli) {
+        this.Treilli = treilli;
         this.controleur = new Controleur(this);
         this.rbSelect = new RadioButton("Select");
         this.rbNoeuds = new RadioButton("Noeuds");
@@ -66,8 +67,19 @@ public class TreilliPane extends BorderPane {
     /**
      * @return the terrain
      */
-    public Terrain getTerrain() {
-        return terrain;
+    public List<Terrain> getTerrain() {
+        return Treilli.getTerraincontenue();
     }
-
+public List<Noeud> getNoeud() {
+        return Treilli.getNoeudcontenue();
+    }
+public List<Barre> getBarre() {
+        return Treilli.getBarrecontenue();
+    }
+public List<Barre.Type> getType() {
+        return Treilli.getTypebarrecontenue();
+    }
+public Treilli getTreilli(){
+    return this.Treilli;
+}
 }

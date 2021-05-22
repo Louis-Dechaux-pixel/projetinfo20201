@@ -5,7 +5,7 @@
  */
 package dechaux.louis.projetinfo2021.gui;
 
-import dechaux.louis.projetinfo2021.Terrain;
+import dechaux.louis.projetinfo2021.*;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
@@ -37,7 +37,7 @@ public class DessinCanvas extends Pane {
 
     public void redrawAll() {
         GraphicsContext context = this.realCanvas.getGraphicsContext2D();
-        Terrain terrain = this.main.getTerrain();
+        Treilli treilli = this.main.getTreilli();
         
     
     }

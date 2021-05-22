@@ -5,8 +5,6 @@
  */
 package dechaux.louis.projetinfo2021;
 
-import javafx.scene.canvas.GraphicsContext;
-
 
 /**
  *
@@ -142,7 +140,7 @@ public class Barre {
         return "identifiant" + this.id + "\n debut noeud :" + this.debut + "\n fin noeud: " + this.fin + "\n type:  " + this.typebarre.toString();
     }
 
-    public double distancePoint(Noeud p) {
+    /*public double distancePoint(Noeud p) {
         double x1 = this.debut.getPx();
         double y1 = this.debut.getPy();
         double x2 = this.fin.getPx();
@@ -154,6 +152,6 @@ public class Barre {
             p4 = new NoeudSimple(a,x1,y1);
             return p4.distancePoint(p);
             
-        }
+        }*/
     }
 

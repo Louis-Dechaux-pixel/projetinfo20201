@@ -10,9 +10,6 @@ package dechaux.louis.projetinfo2021;
  * @author ldechaux01
  */
  public class Appui extends Noeud {
-        protected int id;
-        protected double px;
-        protected double py;
         protected Terrain attache;
         public Terrain getAttache() {
             return attache;}

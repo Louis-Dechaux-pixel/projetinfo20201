@@ -24,7 +24,8 @@ public abstract class TriangleTerrain extends Terrain {
     protected Barre s2;
     protected Barre s3;
 
-    public TriangleTerrain(Color couleur) {
+    public TriangleTerrain(int a,Color couleur) {
+        super(a);
         this.couleur = couleur;
     }
 
