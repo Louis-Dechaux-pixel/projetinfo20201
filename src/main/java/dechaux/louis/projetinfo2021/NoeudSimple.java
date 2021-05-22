@@ -4,20 +4,14 @@
  * and open the template in the editor.
  */
 package dechaux.louis.projetinfo2021;
-
-import javafx.scene.paint.Color;
-
-
 /**
  *
  * @author ldechaux01
  */
 public class NoeudSimple extends Noeud {
 
-        public NoeudSimple(double px, double py){
-         this.px=px;
-         this.py=py;
-         this.id=5;
+        public NoeudSimple(int a,double px, double py){
+         super(a,px,py);
          this.force= new Force();         
             
         }
@@ -28,4 +22,5 @@ public class NoeudSimple extends Noeud {
     double distancePoint(Noeud p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 }

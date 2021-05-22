@@ -28,8 +28,6 @@ public class Terrain {
         this.p3localisationy = Lire.d();
     }
     
-    
-    
 public String toString(){
     return "point 1 localisation x :"+this.p1localisationx+"\n point 1 localisation y : "+this.p1localisationy+"\n point 2 localisation x :"+this.p2localisationx+"\n point 2 localisation y : "+this.p2localisationy+"\n point 3 localisation x :"+this.p3localisationx+"\n point 3 localisation y : "+this.p3localisationy;
     }}

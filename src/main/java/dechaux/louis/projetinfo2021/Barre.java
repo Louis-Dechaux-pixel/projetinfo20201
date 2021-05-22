@@ -12,13 +12,21 @@ import javafx.scene.canvas.GraphicsContext;
  *
  * @author ldechaux01
  */
-public class Barre extends TriangleTerrain{
+public class Barre {
 
     protected int id;
     protected Noeud debut;
     protected Noeud fin;
     protected Type typebarre;
 
+    public Barre(int a,Noeud debut,Noeud fin){
+    this.id=a;
+    this.debut=debut;
+    this.fin=fin;
+    this.typebarre=null;
+    //typebarre.TAcier();  
+    }
+            
     public int getId() {
         return id;
     }
@@ -58,10 +66,6 @@ public class Barre extends TriangleTerrain{
         this.typebarre = new Type();
     }
 
-    @Override
-    public void dessine(GraphicsContext context) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public class Type {
 
@@ -107,10 +111,20 @@ public class Barre extends TriangleTerrain{
             System.out.println("definissez la res min");
             this.resmin = Lire.d();
             System.out.println("definissez le prix");
-            this.prix = Lire.d();
+            this.prix = Lire.d();}
 
-        }
-
+        public Type TAcier(){
+       Type Acier = null;
+        Acier.id = 1;
+        Acier.longmax = 1000;
+        Acier.longmin = 10;
+        Acier.resmax = 100;
+        Acier.resmin = 1;
+        Acier.prix = 50;
+      return Acier;  
+    }
+        
+        
         public String toString() {
             return "identifiant: " + this.id + "\n longeur max: " + this.longmax + "\n longmin: " + this.longmin + "\n resmin: " + this.resmin + "\n resmax: " + this.resmax + "\n prix: " + this.prix;
         }
@@ -128,7 +142,8 @@ public class Barre extends TriangleTerrain{
         double x3 = p.getPx();
         double y3 = p.getPy();
             NoeudSimple p4;
-            p4 = new NoeudSimple(x1,y1);
+        int a =1000;
+            p4 = new NoeudSimple(a,x1,y1);
             return p4.distancePoint(p);
             
         }

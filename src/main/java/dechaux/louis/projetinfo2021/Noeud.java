@@ -12,17 +12,21 @@ import javafx.scene.paint.Color;
  *
  * @author ldechaux01
  */
-public class Noeud extends TriangleTerrain {
+public class Noeud {
 
     protected Force force;
     protected int id;
     protected double px;
     protected double py;
     public static double RAYON_IN_DRAW = 5;
-
-    public Noeud(Color couleur) {
-        super(couleur);
+    
+    public Noeud(int a, double px, double py){
+    this.force=null;
+    this.id=a;
+    this.px=px;
+    this.py=py;    
     }
+
 
     public double getPx() {
         return px;
@@ -56,10 +60,5 @@ public class Noeud extends TriangleTerrain {
         this.id = id;
     }
 
-    @Override
-    public void dessine(GraphicsContext context) {
-        context.setFill(this.getCouleur());
-        context.fillOval(this.px - RAYON_IN_DRAW, this.py - RAYON_IN_DRAW, 2 * RAYON_IN_DRAW, 2 * RAYON_IN_DRAW);
-
-    }
+    
 }

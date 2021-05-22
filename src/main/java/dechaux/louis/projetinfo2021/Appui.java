@@ -10,13 +10,20 @@ package dechaux.louis.projetinfo2021;
  * @author ldechaux01
  */
  public class Appui extends Noeud {
+        protected int id;
+        protected double px;
+        protected double py;
         protected Terrain attache;
         public Terrain getAttache() {
             return attache;}
         public void setAttache(Terrain attache) {
             this.attache = attache;}
+        public Appui(int a,double px,double py,Terrain attache){
+            super(a,px,py);
+            this.attache= attache;            
+        }
         
-        public class Appui_simple extends Appui {
+      /*  public class Appui_simple extends Appui {
         public String toString(){
         return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
         }}
@@ -37,7 +44,7 @@ package dechaux.louis.projetinfo2021;
             public String toString(){
         return "identifiant"+this.id+"\n force : "+this.force.toString()+"\n px: "+this.px+"\n py:  "+this.py+"\n attache"+this.attache.toString();
         }
-        }
+        }*/
     }
     
 
