@@ -23,7 +23,7 @@ public class Barre {
     this.id=a;
     this.debut=debut;
     this.fin=fin;
-    this.typebarre=null;
+    this.typebarre=new Type();
     //typebarre.TAcier();  
     }
             
