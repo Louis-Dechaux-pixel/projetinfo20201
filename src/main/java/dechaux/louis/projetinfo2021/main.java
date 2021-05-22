@@ -5,12 +5,14 @@
  */
 package dechaux.louis.projetinfo2021;
 
+import java.io.*;
+
 /**
  *
  * @author ldechaux01
  */
 public class main {
-public static void main(String args[]) {
+public static void main(String args[]) throws IOException {
 /* Barre res;
  res = new Barre();
  System.out.println(res.toString())  ;
@@ -24,4 +26,10 @@ Barre b1;
 b1= new Barre(3,n1,n2);
 b1.setTypebarre(b1.typebarre.TAcier());
 System.out.println(b1.typebarre.toString());
+Treilli t1;
+t1 = new Treilli();
+t1.barrecontenue.add(b1);
+t1.noeudcontenue.add(n1);
+t1.noeudcontenue.add(n2);
+t1.sauvegarde(new File("test1.txt"));
 }}

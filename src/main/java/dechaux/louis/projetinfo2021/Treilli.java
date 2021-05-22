@@ -18,11 +18,11 @@ import dechaux.louis.projetinfo2021.Lire;
  */
 public class Treilli {
     
-    protected List<Barre> barrecontenue;
-    protected List<Type> typebarrecontenue;
-    protected List<Noeud> noeudcontenue;
-    protected List<Terrain> terraincontenue;
-    protected List<Force> forcecontenue;
+    protected List<Barre> barrecontenue = new ArrayList(999) ;
+    protected List<Type> typebarrecontenue = new ArrayList(999) ;
+    protected List<Noeud> noeudcontenue = new ArrayList(999) ;
+    protected List<Terrain> terraincontenue = new ArrayList(999) ;
+    protected List<Force> forcecontenue = new ArrayList(999) ;
 
     public List<Barre> getBarrecontenue() {
         return barrecontenue;
@@ -65,30 +65,32 @@ public class Treilli {
     }
    public void save(Writer w) throws IOException{ 
        int b=terraincontenue.size();
-       for(int i=0;i<=b;i++){
+       for(int i=0;i<b;i++){
            Terrain te = terraincontenue.get(i);
            w.append("Triangle;" + te.id + ";(" + te.p1localisationx + "," + te.p1localisationy + ");(" + te.p2localisationx + "," + te.p2localisationy + ");(" + te.p3localisationx + "," + te.p3localisationy+  ")"+ "\n");
-       w.append("FINTRIANGLES");}
+       w.append("FINTRIANGLES \n");}
        int c=typebarrecontenue.size();
-       for(int j=0;j<=c;j++){
+       for(int j=0;j<c;j++){
            Type ty = typebarrecontenue.get(j);
            w.append("TypeBarre" + ty.id + ";" + ty.prix + ";"+ ty.longmin + ";" + ty.longmax + ";"+ ty.resmax + ";"+ ty.resmin+ "\n" );
-       w.append("FINCATALOGUES");}
+       w.append("FINCATALOGUES \n");}
        int d=noeudcontenue.size();
-       for(int k=0;k<=d;k++){
+       for(int k=0;k<d;k++){
            Noeud no = noeudcontenue.get(k);
            if (no instanceof NoeudSimple){
              w.append("NoeudSimple"+ no.id + ";"+ no.px +";"+ no.py+"\n");
            }
-           if (no instanceof Appui){
+           else if (no instanceof Appui){
              w.append("Appui"+ no.id + ";"+((Appui) no).attache.id +";"+ no.px +";"+ no.py+"\n");  
            }
-           w.append("FINNOEUDS");}
+           else 
+            w.append("Noeud"+ no.id + ";"+ no.px +";"+ no.py+"\n");
+           w.append("FINNOEUDS \n");}
        int e=barrecontenue.size();
-       for(int l=0;l<=e;l++){
+       for(int l=0;l<e;l++){
            Barre ba = barrecontenue.get(l);
            w.append("Barre;" + ba.id + ";"+ba.debut.id+":"+ba.fin.id+";"+ba.typebarre.id+"\n");
-       w.append("FINBARRES");
+       w.append("FINBARRES \n");
        }
    }
    
