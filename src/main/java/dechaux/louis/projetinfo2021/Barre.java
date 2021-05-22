@@ -101,7 +101,15 @@ public class Barre {
         }
 
         public Type() {
-            this.id = 5;
+            this.id=0;
+            this.longmax=0;
+            this.longmin=0;
+            this.resmax=0;
+            this.resmin=0;
+            this.prix=0;    
+        }
+        public Type(int a) {
+            this.id = a;
             System.out.println("definissez la long max");
             this.longmax = Lire.d();
             System.out.println("definissez la long min");
@@ -114,7 +122,7 @@ public class Barre {
             this.prix = Lire.d();}
 
         public Type TAcier(){
-       Type Acier = null;
+       Type Acier = new Type();
         Acier.id = 1;
         Acier.longmax = 1000;
         Acier.longmin = 10;

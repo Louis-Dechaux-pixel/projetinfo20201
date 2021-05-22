@@ -22,9 +22,6 @@ n1= new Noeud(2,2.05255,2.02245);
 n2= new Noeud(3,3.05255,3.02245);
 Barre b1;
 b1= new Barre(3,n1,n2);
-Barre.Type Montype;
-Montype = null;
-Montype.TAcier();
-b1.typebarre=Montype;
+b1.typebarre = Barre.Type.TAcier();
 System.out.println(b1.typebarre.toString());
 }}
