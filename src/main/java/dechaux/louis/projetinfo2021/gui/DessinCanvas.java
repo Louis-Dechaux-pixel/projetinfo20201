@@ -39,7 +39,7 @@ public class DessinCanvas extends Pane {
     public void redrawAll() {
         GraphicsContext context = this.realCanvas.getGraphicsContext2D();
         context.setFill(Color.WHITE);
-        context.fillRect(0, 0, this.getWidth(), this.getHeight());
+        context.fillRect(0,50, this.getWidth(), this.getHeight()-100);
         Treilli treilli = this.main.getTreilli();
         
     
