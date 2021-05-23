@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 
 class TreilliPane extends BorderPane {
     
-    private Treilli Treilli;
+    public Treilli Treilli;
     protected Controleur controleur;
 
     protected RadioButton rbTerrain;

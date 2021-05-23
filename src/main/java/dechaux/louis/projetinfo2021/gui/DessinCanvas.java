@@ -59,6 +59,12 @@ public class DessinCanvas extends Pane {
         GraphicsContext context = this.realCanvas.getGraphicsContext2D();
         context.setFill(Color.RED);
         context.strokeLine(barre.getDebut().getPx(),barre.getDebut().getPy(),barre.getFin().getPx(), barre.getFin().getPy());}
+
+    void drawTerrain(Terrain terrain) {
+       GraphicsContext context = this.realCanvas.getGraphicsContext2D();
+        context.setFill(Color.GREEN);
+        context.strokeLine(localisationpx1,barre.getDebut().getPy(),barre.getFin().getPx(), barre.getFin().getPy());}  
+    }
     
 }
 

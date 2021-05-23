@@ -20,9 +20,11 @@ public class Controleur {
     protected TreilliPane vue;
     int a=0;
     int b=0;
+    int m=0;
     double pos1X;
     double pos1Y;
-    
+    double pos2X;
+    double pos2Y;
     
     
     public Controleur(TreilliPane vue){
@@ -33,8 +35,15 @@ public class Controleur {
     public void changeEtat(int nvEtat){
         if (nvEtat == 10){
             this.état=10;
-        
         }
+        if (nvEtat == 11){
+            this.état=11;
+            }
+        if (nvEtat == 12){
+            this.état=12;
+            }
+        
+        
         if (nvEtat==20){
         this.état=20;
             
@@ -54,24 +63,40 @@ public class Controleur {
     
     
     void clicDansZoneDessin(MouseEvent t) {
-       
-        
-        
-        
-       if (this.état==20){
+       if (this.état==10){
+       this.pos1X=t.getX();
+       this.pos1Y=t.getY();
+       this.changeEtat(11);
+       } 
+       else if (this.état==11){
+       this.pos2X=t.getX();
+       this.pos2Y=t.getY();
+       this.changeEtat(12);
+       } 
+       else if (this.état==12){
        double px = t.getX();
        double py = t.getY();
-       Treilli model = this.vue.getTreilli();
+       Terrain terrain = new Terrain(m,pos1X,pos1Y,pos2X,pos2Y,px,py);
+       m++;
+       this.vue.Treilli.terraincontenue.add(terrain);
+       this.vue.cDessin.drawTerrain(terrain);
+           
+           
+           
+       } 
+        
+        
+       else if (this.état==20){
+       double px = t.getX();
+       double py = t.getY();
        Noeud nclick = new NoeudSimple(a,px,py);
-       model.noeudcontenue.add(nclick);
-       a=a+1;
+       this.vue.Treilli.noeudcontenue.add(nclick);
+       a++;
        //this.vue.cDessin.setCouleur();
        this.vue.cDessin.drawNoeud(nclick);
        //this.vue.redrawAll();
         }
-       else if (this.état==40){
-       
-           
+       else if (this.état==40){   
        this.pos1X=t.getX();
        this.pos1Y=t.getY();
        this.changeEtat(41);
@@ -79,16 +104,15 @@ public class Controleur {
        else if (this.état==41){
        double px2 = t.getX();
        double py2 = t.getY();
-       Treilli model = this.vue.getTreilli();
        Noeud b1 = new NoeudSimple(a,this.pos1X,this.pos1Y);
-       a=a+1;
-       model.noeudcontenue.add(b1);
+       a++;
+       this.vue.Treilli.noeudcontenue.add(b1);
        Noeud b2 = new NoeudSimple(a,px2,py2);
-       a=a+1;
-       model.noeudcontenue.add(b2);
+       a++;
+       this.vue.Treilli.noeudcontenue.add(b2);
        Barre barre = new Barre(b,b1,b2);
-       b=b+1;  
-       model.barrecontenue.add(barre);
+       b++;  
+       this.vue.Treilli.barrecontenue.add(barre);
        this.vue.cDessin.drawBarre(barre);
        this.changeEtat(40);  
        }
