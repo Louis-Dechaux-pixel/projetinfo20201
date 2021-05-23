@@ -20,7 +20,7 @@ public class DessinCanvas extends Pane {
     
     protected TreilliPane main;
 
-    private Canvas realCanvas;
+    public Canvas realCanvas;
 
     public DessinCanvas(TreilliPane main) {
         this.main = main;
@@ -45,14 +45,20 @@ public class DessinCanvas extends Pane {
         GraphicsContext context = this.realCanvas.getGraphicsContext2D();
         context.setFill(Color.WHITE);
         context.fillRect(0,50, this.getWidth(), this.getHeight()-100);
-        Treilli treilli = this.main.getTreilli();
+    }
+    public void setCouleur(){
+     GraphicsContext context = this.realCanvas.getGraphicsContext2D();
+        context.setFill(Color.RED);   
     }
     public void drawNoeud(Noeud noeud) {
         GraphicsContext context = this.realCanvas.getGraphicsContext2D();
+        context.setFill(Color.RED);
         context.fillOval(noeud.getPx()-2.5, noeud.getPy()-2.5, 2*5, 2*5);
     }
-
-}
+    public void drawBarre(Barre barre) {
+        GraphicsContext context = this.realCanvas.getGraphicsContext2D();
+        context.setFill(Color.RED);
+        context.strokeLine(barre.getDebut().getPx(),barre.getDebut().getPy(),barre.getFin().getPx(), barre.getFin().getPy());}
     
-
+}
 

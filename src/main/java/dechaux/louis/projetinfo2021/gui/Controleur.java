@@ -6,7 +6,10 @@
 package dechaux.louis.projetinfo2021.gui;
 
 import dechaux.louis.projetinfo2021.*;
+import javafx.event.ActionEvent;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 
 /**
  *
@@ -16,14 +19,35 @@ public class Controleur {
     private int état;
     protected TreilliPane vue;
     int a=0;
+    int b=0;
+    double pos1X;
+    double pos1Y;
+    
+    
+    
     public Controleur(TreilliPane vue){
         this.vue = vue;
     }
 
     
     public void changeEtat(int nvEtat){
-        if (nvEtat == 1){
-            this.état=1;
+        if (nvEtat == 10){
+            this.état=10;
+        
+        }
+        if (nvEtat==20){
+        this.état=20;
+            
+        }
+        if (nvEtat==30){
+        this.état=30;
+    }
+       
+        if (nvEtat==40){
+        this.état=40;
+        }
+         if (nvEtat==41){
+        this.état=41;
         }
     }
     
@@ -31,20 +55,70 @@ public class Controleur {
     
     void clicDansZoneDessin(MouseEvent t) {
        
+        
+        
+        
+       if (this.état==20){
        double px = t.getX();
        double py = t.getY();
        Treilli model = this.vue.getTreilli();
        Noeud nclick = new NoeudSimple(a,px,py);
        model.noeudcontenue.add(nclick);
        a=a+1;
+       //this.vue.cDessin.setCouleur();
        this.vue.cDessin.drawNoeud(nclick);
-       this.vue.redrawAll();
+       //this.vue.redrawAll();
+        }
+       else if (this.état==40){
+       
+           
+       this.pos1X=t.getX();
+       this.pos1Y=t.getY();
+       this.changeEtat(41);
+       }
+       else if (this.état==41){
+       double px2 = t.getX();
+       double py2 = t.getY();
+       Treilli model = this.vue.getTreilli();
+       Noeud b1 = new NoeudSimple(a,this.pos1X,this.pos1Y);
+       a=a+1;
+       model.noeudcontenue.add(b1);
+       Noeud b2 = new NoeudSimple(a,px2,py2);
+       a=a+1;
+       model.noeudcontenue.add(b2);
+       Barre barre = new Barre(b,b1,b2);
+       b=b+1;  
+       model.barrecontenue.add(barre);
+       this.vue.cDessin.drawBarre(barre);
+       this.changeEtat(40);  
+       }
+        
+        
+        
+        
+        
+        
        
        
        
        
        
-       
+    }
+
+    void boutonAppui(ActionEvent t) {
+        this.changeEtat(30);
+    }
+
+    void boutonNoeud(ActionEvent t) {
+        this.changeEtat(20);
+    }
+
+    void boutonBarres(ActionEvent t) {
+        this.changeEtat(40);
+    }
+
+    void boutonTerrain(ActionEvent t) {
+        this.changeEtat(10);
     }
     
 }

@@ -7,9 +7,7 @@ package dechaux.louis.projetinfo2021.gui;
 
 import dechaux.louis.projetinfo2021.*;
 import java.util.List;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
@@ -34,9 +32,18 @@ class TreilliPane extends BorderPane {
         this.Treilli = treilli;
         this.controleur = new Controleur(this);
         this.rbAppui = new RadioButton("Appui");
+        this.rbAppui.setOnAction((t) -> {
+            this.controleur.boutonAppui(t);});
         this.rbNoeuds = new RadioButton("Noeuds");
+        this.rbNoeuds.setOnAction((t) -> {
+            this.controleur.boutonNoeud(t);});
         this.rbBarres = new RadioButton("Barres");
+        this.rbBarres.setOnAction((t) -> {
+            this.controleur.boutonBarres(t);});
         this.rbTerrain = new RadioButton("Terrain");
+        this.rbTerrain.setOnAction((t) -> {
+            this.controleur.boutonTerrain(t);});
+        
     ToggleGroup TG = new ToggleGroup();
         this.rbAppui.setToggleGroup(TG);
         this.rbBarres.setToggleGroup(TG);
