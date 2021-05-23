@@ -51,8 +51,7 @@
                     <stripDebug>true</stripDebug>
                     <noManPages>true</noManPages>
                     <mainClass>dechaux.louis.projetinfo2021.gui.Main</mainClass>
-                    <launcher>TutoVideoDessin</launcher>
-                    <jlinkImageName>TutoVideoDessin</jlinkImageName>
+                    <launcher>projetinfo2021</launcher>
                     <!-- pour zipper le dossier image
                      je ne le fais pas car je veux créer d'abord un raccourci vers le launcher
                                     <jlinkZipName>TutoVideoDessin</jlinkZipName>
