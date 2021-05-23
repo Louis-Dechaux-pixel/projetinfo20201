@@ -18,11 +18,11 @@ import dechaux.louis.projetinfo2021.Lire;
  */
 public class Treilli {
     
-    protected List<Barre> barrecontenue = new ArrayList(999) ;
-    protected List<Type> typebarrecontenue = new ArrayList(999) ;
-    protected List<Noeud> noeudcontenue = new ArrayList(999) ;
-    protected List<Terrain> terraincontenue = new ArrayList(999) ;
-    protected List<Force> forcecontenue = new ArrayList(999) ;
+    public List<Barre> barrecontenue = new ArrayList(999) ;
+    public List<Type> typebarrecontenue = new ArrayList(999) ;
+    public List<Noeud> noeudcontenue = new ArrayList(999) ;
+    public List<Terrain> terraincontenue = new ArrayList(999) ;
+    public List<Force> forcecontenue = new ArrayList(999) ;
 
     public List<Barre> getBarrecontenue() {
         return barrecontenue;
