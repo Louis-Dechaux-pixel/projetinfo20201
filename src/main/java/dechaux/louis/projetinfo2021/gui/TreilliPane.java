@@ -21,12 +21,12 @@ public class TreilliPane extends BorderPane {
     private Treilli Treilli;
     protected Controleur controleur;
 
-    protected RadioButton rbSelect;
+    protected RadioButton rbTerrain;
+    protected RadioButton rbAppui;
     protected RadioButton rbNoeuds;
     protected RadioButton rbBarres;
 
-    protected Button bGrouper;
-    protected Button bCouleur;
+    protected Button bsauvegarde;
 
     protected DessinCanvas cDessin;
     
@@ -36,20 +36,20 @@ public class TreilliPane extends BorderPane {
     public TreilliPane(Treilli treilli) {
         this.Treilli = treilli;
         this.controleur = new Controleur(this);
-        this.rbSelect = new RadioButton("Select");
+        this.rbAppui = new RadioButton("Appui");
         this.rbNoeuds = new RadioButton("Noeuds");
         this.rbBarres = new RadioButton("Barres");
+        this.rbTerrain = new RadioButton("Terrain");
 
-        VBox vbGauche = new VBox(this.rbSelect, this.rbNoeuds, this.rbBarres);
+        VBox vbGauche = new VBox(this.rbTerrain, this.rbNoeuds, this.rbAppui, this.rbBarres);
         this.setLeft(vbGauche);
 
-        this.bGrouper = new Button("Grouper");
-        this.bGrouper.setOnAction((t) -> {
+       
+        this.bsauvegarde = new Button("sauvegarde");
+        this.bsauvegarde.setOnAction((t) -> {
+        
         });
-        this.bCouleur = new Button("Couleur");
-        this.bCouleur.setOnAction((t) -> {
-        });
-        VBox vbDroit = new VBox(this.bGrouper, this.bCouleur);
+        VBox vbDroit = new VBox(this.bsauvegarde);
         this.setRight(vbDroit);
 
         this.cDessin = new DessinCanvas(this);
