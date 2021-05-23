@@ -9,14 +9,11 @@ import dechaux.louis.projetinfo2021.*;
 import java.util.List;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
-/**
- *
- * @author ldenner01
- */
-public class TreilliPane extends BorderPane {
+class TreilliPane extends BorderPane {
     
     private Treilli Treilli;
     protected Controleur controleur;
@@ -40,8 +37,14 @@ public class TreilliPane extends BorderPane {
         this.rbNoeuds = new RadioButton("Noeuds");
         this.rbBarres = new RadioButton("Barres");
         this.rbTerrain = new RadioButton("Terrain");
+    ToggleGroup TG = new ToggleGroup();
+        this.rbAppui.setToggleGroup(TG);
+        this.rbBarres.setToggleGroup(TG);
+        this.rbNoeuds.setToggleGroup(TG);
+        this.rbTerrain.setToggleGroup(TG);
 
-        VBox vbGauche = new VBox(this.rbTerrain, this.rbNoeuds, this.rbAppui, this.rbBarres);
+VBox vbGauche = new VBox(this.rbTerrain, this.rbNoeuds, this.rbAppui, this.rbBarres);
+        this.rbTerrain.setSelected(true);
         this.setLeft(vbGauche);
 
        
@@ -56,6 +59,8 @@ public class TreilliPane extends BorderPane {
         this.setCenter(this.cDessin);
 
     }
+    
+    
 
     /**
      * @return the controleur

@@ -18,7 +18,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        Scene sc = new Scene(new TreilliPane(),600,600);
+        Scene sc = new Scene(new TreilliPane(),1300,700);
         stage.setScene(sc);
         stage.show();
     }

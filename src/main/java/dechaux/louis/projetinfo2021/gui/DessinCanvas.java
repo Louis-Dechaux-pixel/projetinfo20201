@@ -9,6 +9,7 @@ import dechaux.louis.projetinfo2021.*;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 /**
  *
@@ -37,6 +38,8 @@ public class DessinCanvas extends Pane {
 
     public void redrawAll() {
         GraphicsContext context = this.realCanvas.getGraphicsContext2D();
+        context.setFill(Color.WHITE);
+        context.fillRect(0, 0, this.getWidth(), this.getHeight());
         Treilli treilli = this.main.getTreilli();
         
     
