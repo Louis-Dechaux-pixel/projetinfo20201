@@ -25,7 +25,7 @@ class TreilliPane extends BorderPane {
 
     protected Button bsauvegarde;
 
-    protected DessinCanvas cDessin;
+    public DessinCanvas cDessin;
     
     public TreilliPane(){
         this(new Treilli());
@@ -57,6 +57,7 @@ VBox vbGauche = new VBox(this.rbTerrain, this.rbNoeuds, this.rbAppui, this.rbBar
 
         this.cDessin = new DessinCanvas(this);
         this.setCenter(this.cDessin);
+        this.controleur.changeEtat(1);
 
     }
     public void redrawAll(){

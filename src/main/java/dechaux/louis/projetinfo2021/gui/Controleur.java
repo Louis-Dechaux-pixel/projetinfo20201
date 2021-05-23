@@ -20,15 +20,31 @@ public class Controleur {
         this.vue = vue;
     }
 
+    
+    public void changeEtat(int nvEtat){
+        if (nvEtat == 1){
+            this.état=1;
+        }
+    }
+    
+    
+    
     void clicDansZoneDessin(MouseEvent t) {
        
        double px = t.getX();
        double py = t.getY();
        Treilli model = this.vue.getTreilli();
-       Noeud nclick = new Noeud(a,px,py);
+       Noeud nclick = new NoeudSimple(a,px,py);
        model.noeudcontenue.add(nclick);
        a=a+1;
+       this.vue.cDessin.drawNoeud(nclick);
        this.vue.redrawAll();
+       
+       
+       
+       
+       
+       
     }
     
 }

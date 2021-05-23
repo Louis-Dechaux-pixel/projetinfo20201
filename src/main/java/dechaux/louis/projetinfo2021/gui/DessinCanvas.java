@@ -11,6 +11,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
+
 /**
  *
  * @author ldenner01
@@ -45,8 +46,13 @@ public class DessinCanvas extends Pane {
         context.setFill(Color.WHITE);
         context.fillRect(0,50, this.getWidth(), this.getHeight()-100);
         Treilli treilli = this.main.getTreilli();
-        
-    
+    }
+    public void drawNoeud(Noeud noeud) {
+        GraphicsContext context = this.realCanvas.getGraphicsContext2D();
+        context.fillOval(noeud.getPx()-2.5, noeud.getPy()-2.5, 2*5, 2*5);
     }
 
 }
+    
+
+
