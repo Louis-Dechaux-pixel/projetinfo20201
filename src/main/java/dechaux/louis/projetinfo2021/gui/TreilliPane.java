@@ -59,7 +59,9 @@ VBox vbGauche = new VBox(this.rbTerrain, this.rbNoeuds, this.rbAppui, this.rbBar
         this.setCenter(this.cDessin);
 
     }
-    
+    public void redrawAll(){
+        this.cDessin.redrawAll();
+    }
     
 
     /**

@@ -33,6 +33,10 @@ public class DessinCanvas extends Pane {
         this.realCanvas.widthProperty().addListener((o) -> {
             this.redrawAll();
         });
+        this.realCanvas.setOnMouseClicked((t) -> {
+            Controleur control = this.main.getControleur();
+        control.clicDansZoneDessin(t);
+    });
         this.redrawAll();
     }
 
