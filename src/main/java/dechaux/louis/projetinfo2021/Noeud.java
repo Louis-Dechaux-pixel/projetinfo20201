@@ -17,7 +17,6 @@ public class Noeud {
     protected int id;
     protected double px;
     protected double py;
-    public static double RAYON_IN_DRAW = 5;
     
     public Noeud(int a, double px, double py){
     this.force=null;

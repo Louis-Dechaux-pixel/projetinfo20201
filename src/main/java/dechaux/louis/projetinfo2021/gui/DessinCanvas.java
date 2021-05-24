@@ -24,21 +24,23 @@ public class DessinCanvas extends Pane {
 
     public DessinCanvas(TreilliPane main) {
         this.main = main;
+        
         this.realCanvas = new Canvas(this.getWidth(), this.getHeight());
         this.getChildren().add(this.realCanvas);
         this.realCanvas.heightProperty().bind(this.heightProperty());
         this.realCanvas.heightProperty().addListener((o) -> {
-            this.redrawAll();
+           this.redrawAll();
         });
         this.realCanvas.widthProperty().bind(this.widthProperty());
         this.realCanvas.widthProperty().addListener((o) -> {
-            this.redrawAll();
+           
         });
+        this.redrawAll();
         this.realCanvas.setOnMouseClicked((t) -> {
             Controleur control = this.main.getControleur();
         control.clicDansZoneDessin(t);
     });
-        this.redrawAll();
+      this.redrawAll(); 
     }
 
     public void redrawAll() {

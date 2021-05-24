@@ -19,6 +19,8 @@ class TreilliPane extends BorderPane {
     public Treilli Treilli;
     protected Controleur controleur;
 
+    int a=2;
+    protected Button bpoutre;
     protected RadioButton rbTerrain;
     protected RadioButton rbAppui;
     protected RadioButton rbNoeuds;
@@ -56,7 +58,13 @@ class TreilliPane extends BorderPane {
 VBox vbGauche = new VBox(this.rbTerrain, this.rbNoeuds, this.rbAppui, this.rbBarres);
         this.rbTerrain.setSelected(true);
         this.setLeft(vbGauche);
-
+        this.bpoutre = new Button("type de poutre");
+        this.bpoutre.setOnAction((t)-> {
+           Type poutre ;
+           poutre = new Type(a);
+           this.Treilli.typebarrecontenue.add(poutre);
+           a++;
+            });
         this.breset= new Button("reset");
         this.breset.setOnAction((t)-> {
             redrawAll();
@@ -73,7 +81,7 @@ VBox vbGauche = new VBox(this.rbTerrain, this.rbNoeuds, this.rbAppui, this.rbBar
                 System.out.println("erreur dans la sauvegarde "+ex);
             }
         });
-        VBox vbDroit = new VBox(this.bsauvegarde,this.breset);
+        VBox vbDroit = new VBox(this.bsauvegarde,this.breset, this.bpoutre);
         this.setRight(vbDroit);
 
         this.cDessin = new DessinCanvas(this);
@@ -105,7 +113,7 @@ public List<Noeud> getNoeud() {
 public List<Barre> getBarre() {
         return Treilli.getBarrecontenue();
     }
-public List<Barre.Type> getType() {
+public List<Type> getType() {
         return Treilli.getTypebarrecontenue();
     }
 public Treilli getTreilli(){

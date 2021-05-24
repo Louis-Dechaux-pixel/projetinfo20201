@@ -5,7 +5,6 @@
  */
 package dechaux.louis.projetinfo2021;
 
-import dechaux.louis.projetinfo2021.Barre.Type;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -73,20 +72,20 @@ public class Treilli {
        int c=typebarrecontenue.size();
        for(int j=0;j<c;j++){
            Type ty = typebarrecontenue.get(j);
-           w.append("TypeBarre" + ty.id + ";" + ty.prix + ";"+ ty.longmin + ";" + ty.longmax + ";"+ ty.resmax + ";"+ ty.resmin+ "\n" );
+           w.append("TypeBarre;" + ty.id + ";" + ty.prix + ";"+ ty.longmin + ";" + ty.longmax + ";"+ ty.resmax + ";"+ ty.resmin+ "\n" );
        }
        w.append("FINCATALOGUES \n");
        int d=noeudcontenue.size();
        for(int k=0;k<d;k++){
            Noeud no = noeudcontenue.get(k);
            if (no instanceof NoeudSimple){
-             w.append("NoeudSimple"+ no.id + ";"+ no.px +";"+ no.py+"\n");
+             w.append("NoeudSimple;"+ no.id + ";"+ no.px +";"+ no.py+"\n");
            }
            else if (no instanceof Appui){
-             w.append("Appui"+ no.id + ";"+((Appui) no).attache.id +";"+ no.px +";"+ no.py+"\n");  
+             w.append("Appui;"+ no.id + ";"+((Appui) no).attache.id +";"+ no.px +";"+ no.py+"\n");  
            }
            else 
-            w.append("Noeud"+ no.id + ";"+ no.px +";"+ no.py+"\n");
+            w.append("Noeud;"+ no.id + ";"+ no.px +";"+ no.py+"\n");
        } 
        w.append("FINNOEUDS \n");
        int e=barrecontenue.size();
