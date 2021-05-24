@@ -22,7 +22,7 @@ public class Treilli {
     public List<Noeud> noeudcontenue = new ArrayList(999) ;
     public List<Terrain> terraincontenue = new ArrayList(999) ;
     public List<Force> forcecontenue = new ArrayList(999) ;
-
+    
     public List<Barre> getBarrecontenue() {
         return barrecontenue;
     }

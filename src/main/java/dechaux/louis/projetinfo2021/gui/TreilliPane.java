@@ -87,7 +87,9 @@ VBox vbGauche = new VBox(this.rbTerrain, this.rbNoeuds, this.rbAppui, this.rbBar
         this.cDessin = new DessinCanvas(this);
         this.setCenter(this.cDessin);
         this.controleur.changeEtat(1);
-
+        Type tacier = new Type();
+        tacier = tacier.TAcier();
+        this.Treilli.typebarrecontenue.add(tacier);
     }
     public void redrawAll(){
         this.cDessin.redrawAll();
