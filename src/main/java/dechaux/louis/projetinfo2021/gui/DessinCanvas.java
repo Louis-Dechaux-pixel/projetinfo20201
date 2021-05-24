@@ -57,13 +57,16 @@ public class DessinCanvas extends Pane {
     }
     public void drawBarre(Barre barre) {
         GraphicsContext context = this.realCanvas.getGraphicsContext2D();
-        context.setFill(Color.RED);
+        context.setStroke(Color.RED);
         context.strokeLine(barre.getDebut().getPx(),barre.getDebut().getPy(),barre.getFin().getPx(), barre.getFin().getPy());}
 
     void drawTerrain(Terrain terrain) {
        GraphicsContext context = this.realCanvas.getGraphicsContext2D();
-        context.setFill(Color.GREEN);
-        context.strokeLine(localisationpx1,barre.getDebut().getPy(),barre.getFin().getPx(), barre.getFin().getPy());}  
+       System.out.println(terrain.getP1localisationy());
+        double[] abscisses ={terrain.getP1localisationx(), terrain.getP2localisationx(), terrain.getP3localisationx()};
+        double[] ordonnées ={terrain.getP1localisationy(),terrain.getP2localisationy(),terrain.getP3localisationy()};
+        context.setStroke(Color.GREEN);
+        context.strokePolygon(abscisses, ordonnées, 3);
     }
     
 }

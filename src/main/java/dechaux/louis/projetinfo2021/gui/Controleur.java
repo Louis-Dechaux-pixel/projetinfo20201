@@ -76,11 +76,12 @@ public class Controleur {
        else if (this.état==12){
        double px = t.getX();
        double py = t.getY();
-       Terrain terrain = new Terrain(m,pos1X,pos1Y,pos2X,pos2Y,px,py);
+       Terrain terrain = new Terrain(m,this.pos1X,this.pos1Y,this.pos2X,this.pos2Y,px,py);
+       System.out.println(this.pos1X+" "+this.pos1Y+" "+this.pos2X+" "+this.pos2Y+" "+px+" "+py);
        m++;
        this.vue.Treilli.terraincontenue.add(terrain);
        this.vue.cDessin.drawTerrain(terrain);
-           
+       this.changeEtat(10);
            
            
        } 
