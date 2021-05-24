@@ -6,6 +6,7 @@
 package dechaux.louis.projetinfo2021.gui;
 
 import dechaux.louis.projetinfo2021.*;
+import static java.lang.Math.abs;
 import javafx.event.ActionEvent;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
@@ -100,13 +101,28 @@ public class Controleur {
        //this.vue.redrawAll();
         }
        else if (this.état==40){   
+       Noeud proche = noeudproche(t.getX(),t.getY());
+       if (proche!= null){
+      this.pos1X=proche.getPx();
+      this.pos1Y=proche.getPy();
+       }    
+       else {
        this.pos1X=t.getX();
        this.pos1Y=t.getY();
+       }
        this.changeEtat(41);
        }
        else if (this.état==41){
-       double px2 = t.getX();
-       double py2 = t.getY();
+       double px2;
+       double py2;
+       Noeud proche = noeudproche(t.getX(),t.getY());
+       if (proche != null){
+       px2 = proche.getPx();
+       py2 = proche.getPy();
+       }
+       else { px2 = t.getX();
+        py2 = t.getY();
+       }
        Noeud b1 = new NoeudSimple(a,this.pos1X,this.pos1Y);
        a++;
        this.vue.Treilli.noeudcontenue.add(b1);
@@ -148,4 +164,15 @@ public class Controleur {
         this.changeEtat(10);
     }
     
+   public Noeud noeudproche(double px, double py){
+     int d=this.vue.Treilli.noeudcontenue.size();
+       for(int k=0;k<d;k++){
+       Noeud no = this.vue.Treilli.noeudcontenue.get(k);
+       double PX = no.getPx();
+       double PY = no.getPy();       
+      if (abs(PX-px)<25 && abs(PY-py)<25){
+       return no;
+       }}
+    return null;}
+
 }
