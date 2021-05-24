@@ -6,7 +6,10 @@
 package dechaux.louis.projetinfo2021.gui;
 
 import dechaux.louis.projetinfo2021.*;
+import java.io.*;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -20,7 +23,7 @@ class TreilliPane extends BorderPane {
     protected RadioButton rbAppui;
     protected RadioButton rbNoeuds;
     protected RadioButton rbBarres;
-
+    protected Button breset;
     protected Button bsauvegarde;
 
     public DessinCanvas cDessin;
@@ -54,12 +57,23 @@ VBox vbGauche = new VBox(this.rbTerrain, this.rbNoeuds, this.rbAppui, this.rbBar
         this.rbTerrain.setSelected(true);
         this.setLeft(vbGauche);
 
-       
+        this.breset= new Button("reset");
+        this.breset.setOnAction((t)-> {
+            redrawAll();
+            this.Treilli.terraincontenue.clear();
+            this.Treilli.noeudcontenue.clear();
+            this.Treilli.forcecontenue.clear();
+            this.Treilli.barrecontenue.clear();
+            });
         this.bsauvegarde = new Button("sauvegarde");
         this.bsauvegarde.setOnAction((t) -> {
-        
+            try {
+                this.Treilli.sauvegarde(new File("testsauvegarde.txt"));
+            } catch (IOException ex) {
+                System.out.println("erreur dans la sauvegarde "+ex);
+            }
         });
-        VBox vbDroit = new VBox(this.bsauvegarde);
+        VBox vbDroit = new VBox(this.bsauvegarde,this.breset);
         this.setRight(vbDroit);
 
         this.cDessin = new DessinCanvas(this);

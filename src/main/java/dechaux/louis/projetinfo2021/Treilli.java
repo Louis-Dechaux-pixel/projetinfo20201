@@ -68,12 +68,14 @@ public class Treilli {
        for(int i=0;i<b;i++){
            Terrain te = terraincontenue.get(i);
            w.append("Triangle;" + te.id + ";(" + te.p1localisationx + "," + te.p1localisationy + ");(" + te.p2localisationx + "," + te.p2localisationy + ");(" + te.p3localisationx + "," + te.p3localisationy+  ")"+ "\n");
-       w.append("FINTRIANGLES \n");}
+       }
+       w.append("FINTRIANGLES \n");
        int c=typebarrecontenue.size();
        for(int j=0;j<c;j++){
            Type ty = typebarrecontenue.get(j);
            w.append("TypeBarre" + ty.id + ";" + ty.prix + ";"+ ty.longmin + ";" + ty.longmax + ";"+ ty.resmax + ";"+ ty.resmin+ "\n" );
-       w.append("FINCATALOGUES \n");}
+       }
+       w.append("FINCATALOGUES \n");
        int d=noeudcontenue.size();
        for(int k=0;k<d;k++){
            Noeud no = noeudcontenue.get(k);
@@ -85,13 +87,15 @@ public class Treilli {
            }
            else 
             w.append("Noeud"+ no.id + ";"+ no.px +";"+ no.py+"\n");
-           w.append("FINNOEUDS \n");}
+       } 
+       w.append("FINNOEUDS \n");
        int e=barrecontenue.size();
        for(int l=0;l<e;l++){
            Barre ba = barrecontenue.get(l);
            w.append("Barre;" + ba.id + ";"+ba.debut.id+":"+ba.fin.id+";"+ba.typebarre.id+"\n");
-       w.append("FINBARRES \n");
        }
+       w.append("FINBARRES \n");
+       
    }
    
    

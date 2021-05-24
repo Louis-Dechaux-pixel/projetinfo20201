@@ -33,6 +33,8 @@ public class Controleur {
 
     
     public void changeEtat(int nvEtat){
+        
+        
         if (nvEtat == 10){
             this.état=10;
         }
