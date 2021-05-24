@@ -6,6 +6,8 @@
 package dechaux.louis.projetinfo2021.gui;
 
 import dechaux.louis.projetinfo2021.*;
+import static java.lang.Double.max;
+import static java.lang.Double.min;
 import static java.lang.Math.abs;
 import javafx.event.ActionEvent;
 import javafx.scene.canvas.GraphicsContext;
@@ -17,7 +19,7 @@ import javafx.scene.paint.Color;
  * @author ldenner01
  */
 public class Controleur {
-    private int état;
+    private int état = 10;
     protected TreilliPane vue;
     int a=0;
     int b=0;
@@ -80,7 +82,7 @@ public class Controleur {
        double px = t.getX();
        double py = t.getY();
        Terrain terrain = new Terrain(m,this.pos1X,this.pos1Y,this.pos2X,this.pos2Y,px,py);
-       System.out.println(this.pos1X+" "+this.pos1Y+" "+this.pos2X+" "+this.pos2Y+" "+px+" "+py);
+       //System.out.println(this.pos1X+" "+this.pos1Y+" "+this.pos2X+" "+this.pos2Y+" "+px+" "+py);
        m++;
        this.vue.Treilli.terraincontenue.add(terrain);
        this.vue.cDessin.drawTerrain(terrain);
@@ -100,6 +102,99 @@ public class Controleur {
        this.vue.cDessin.drawNoeud(nclick);
        //this.vue.redrawAll();
         }
+       else if(this.état==30){
+       double px =t.getX();
+       double py =t.getY();
+       int g=this.vue.Treilli.terraincontenue.size();
+       for(int i=0;i<g;i++){
+       Terrain te = this.vue.Treilli.terraincontenue.get(i);
+       double xb1,xa1,xb2,xa2,xb3,xa3,ya1,yb1,ya2,yb2,ya3,yb3;
+       if(te.getP2localisationx()>te.getP1localisationx()){
+       xb1 =te.getP2localisationx();
+       xa1 =te.getP1localisationx();
+       yb1 =te.getP2localisationy();
+       ya1 =te.getP1localisationy();}
+       else{
+       xb1 =te.getP1localisationx();
+       xa1 =te.getP2localisationx();
+       yb1 =te.getP1localisationy();
+       ya1 =te.getP2localisationy(); 
+       }
+       double coeff1 = (yb1-ya1)/(xb1-xa1);
+       double beta1 = te.getP1localisationy()-(coeff1 * te.getP1localisationx());
+       for (double x1=xa1; x1<xb1; x1++){
+         double y1=x1*coeff1+beta1;
+         System.out.println(coeff1+" c1 "+x1+" "+y1+" "+abs(x1-px)+" "+abs(y1-py));
+           if (abs(x1-px)<5 && abs(y1-py)<5){
+            System.out.println("trouvé");
+            Appui appui = new Appui(a,px,coeff1*px+beta1,this.vue.Treilli.terraincontenue.get(i));
+            this.vue.Treilli.noeudcontenue.add(appui);
+            a++;
+            this.vue.cDessin.drawAppui(appui);
+            break;    
+           }} 
+       if(te.getP3localisationx()>te.getP2localisationx()){
+       xb2 =te.getP3localisationx();
+       xa2 =te.getP2localisationx();
+       yb2 =te.getP3localisationy();
+       ya2 =te.getP2localisationy();}
+       else{
+       xb2 =te.getP2localisationx();
+       xa2 =te.getP3localisationx();
+       yb2 =te.getP2localisationy();
+       ya2 =te.getP3localisationy(); 
+       }    
+       double coeff2 = (yb2-ya2)/(xb2-xa2);
+       double beta2 = te.getP2localisationy()-(coeff2 * te.getP2localisationx());
+       for (double x2=xa2; x2<xb2; x2++){
+         double y2=(x2)*(coeff2)+(beta2);
+         System.out.println(coeff2+" c2 "+x2+" "+y2+" "+abs(x2-px)+" "+abs(y2-py));
+           if (abs(x2-px)<5 && abs(y2-py)<5){
+            System.out.println("trouvé");
+            Appui appui = new Appui(a,px,coeff2*px+beta2,this.vue.Treilli.terraincontenue.get(i));
+            this.vue.Treilli.noeudcontenue.add(appui);
+            a++;
+            this.vue.cDessin.drawAppui(appui);
+            break;    
+           }} 
+       if(te.getP1localisationx()>te.getP3localisationx()){
+       xb3 =te.getP1localisationx();
+       xa3 =te.getP3localisationx();
+       yb3 =te.getP1localisationy();
+       ya3 =te.getP3localisationy();}
+       else{
+       xb3 =te.getP3localisationx();
+       xa3 =te.getP1localisationx();
+       yb3 =te.getP3localisationy();
+       ya3 =te.getP1localisationy(); 
+       }    
+       double coeff3 = (yb3-ya3)/(xb3-xa3);
+       double beta3 = te.getP3localisationy()-(coeff3 * te.getP3localisationx());
+       for (double x3=xa3; x3<xb3; x3++){
+         double y3=(x3)*(coeff3)+(beta3);
+         System.out.println(coeff1+" c1 "+x3+" "+y3+" "+abs(x3-px)+" "+abs(y3-py));
+           if (abs(x3-px)<5 && abs(y3-py)<5){
+            System.out.println("trouvé");
+            Appui appui = new Appui(a,px,coeff3*px+beta3,this.vue.Treilli.terraincontenue.get(i));
+            this.vue.Treilli.noeudcontenue.add(appui);
+            a++;
+            this.vue.cDessin.drawAppui(appui);
+            break;    
+           }}
+       
+       
+       
+       
+       
+       
+       
+       }                
+       System.out.println("arrivé a la fin");
+       }
+       
+       
+       
+       
        else if (this.état==40){   
        Noeud proche = noeudproche(t.getX(),t.getY());
        if (proche!= null){

@@ -62,11 +62,18 @@ public class DessinCanvas extends Pane {
 
     void drawTerrain(Terrain terrain) {
        GraphicsContext context = this.realCanvas.getGraphicsContext2D();
-       System.out.println(terrain.getP1localisationy());
+       //System.out.println(terrain.getP1localisationy());
         double[] abscisses ={terrain.getP1localisationx(), terrain.getP2localisationx(), terrain.getP3localisationx()};
         double[] ordonnées ={terrain.getP1localisationy(),terrain.getP2localisationy(),terrain.getP3localisationy()};
         context.setStroke(Color.GREEN);
         context.strokePolygon(abscisses, ordonnées, 3);
+    }
+
+    void drawAppui(Appui appui) {
+    GraphicsContext context = this.realCanvas.getGraphicsContext2D();
+        context.setFill(Color.YELLOW);
+        context.fillOval(appui.getPx()-2.5, appui.getPy()-2.5, 2*5, 2*5);    
+    
     }
     
 }
