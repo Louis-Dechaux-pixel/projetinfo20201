@@ -6,6 +6,7 @@
 package dechaux.louis.projetinfo2021.gui;
 
 import dechaux.louis.projetinfo2021.*;
+import dechaux.louis.projetinfo2021.Matrice;
 import java.io.*;
 import java.util.List;
 import java.util.logging.Level;
@@ -121,4 +122,29 @@ public List<Type> getType() {
 public Treilli getTreilli(){
     return this.Treilli;
 }
+
+public String calcul(){
+String l = new String(); 
+int g=this.Treilli.noeudcontenue.size();
+Matrice calcul = new Matrice(2*g,2*g) ;
+     for(int i=0;i<g;i++){
+           Noeud no = this.Treilli.noeudcontenue.get(i);
+           calcul.set(2*i, 1, no.getForce().getFx());
+           calcul.set(2*i+1,1,no.getForce().getFy());
+           }
+ Matrice inconnue = new Matrice(2*g,1);
+ 
+// inconnue = Matrice.creeVecteur();
+ 
+        
+        
+
+return l ;
+} 
+
+
+
+
+
+
 }
