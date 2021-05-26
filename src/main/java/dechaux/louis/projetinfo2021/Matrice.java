@@ -501,17 +501,6 @@ public class Matrice {
         }
     }
 
-    // quelque petites méthodes utilitaires pour tester que le calcul
-    // de l'inverse (et donc de la descente et de la remontée) est correct
-    // en particulier, à cause des erreur d'arrondi, on a besoin de tester
-    // non pas l'égalité exacte, mais l'égalité approchée de deux matrice
-    // on utilisera la norme la plus simple : le max des coeffs (en val absolue)
-    /**
-     * calcule la norme sup, aussi appelée norme "infinie".
-     * {@code ||M|| = sup(i in 0..nbrLig-1 ; j in 0..nbrCol-1 ; | M_i,j |}
-     *
-     * @return
-     */
     public double normeSup() {
         double max = 0;
         for (int lig = 0; lig < this.getNbrLig(); lig++) {
