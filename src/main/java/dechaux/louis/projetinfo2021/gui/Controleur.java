@@ -21,13 +21,13 @@ import javafx.scene.paint.Color;
 public class Controleur {
     private int état = 10;
     protected TreilliPane vue;
-    int a=0;
-    int b=0;
-    int m=0;
-    double pos1X;
-    double pos1Y;
-    double pos2X;
-    double pos2Y;
+    public int a=0;
+    public int b=0;
+    public int m=0;
+    public double pos1X;
+    public double pos1Y;
+    public double pos2X;
+    public double pos2Y;
     
     
     public Controleur(TreilliPane vue){
