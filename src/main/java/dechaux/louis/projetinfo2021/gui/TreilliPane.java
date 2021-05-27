@@ -20,7 +20,7 @@ class TreilliPane extends BorderPane {
     public Treilli Treilli;
     protected Controleur controleur;
 
-    int a=2;
+    protected int a=2;
     protected Button bpoutre;
     protected RadioButton rbTerrain;
     protected RadioButton rbAppui;
