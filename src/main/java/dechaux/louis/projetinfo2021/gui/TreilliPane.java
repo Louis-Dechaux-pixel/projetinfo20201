@@ -77,7 +77,7 @@ VBox vbGauche = new VBox(this.rbTerrain, this.rbNoeuds, this.rbAppui, this.rbBar
         this.bsauvegarde = new Button("sauvegarde");
         this.bsauvegarde.setOnAction((t) -> {
             try {
-                this.Treilli.sauvegarde(new File("testsauvegarde.txt"));
+                this.Treilli.sauvegarde(new File("sauvegarde.txt"));
             } catch (IOException ex) {
                 System.out.println("erreur dans la sauvegarde "+ex);
             }
